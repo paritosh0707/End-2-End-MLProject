@@ -25,7 +25,7 @@ class DataTransformation:
             raise CustomException(e,sys)
 
     def get_data_transformer_object(self)->ColumnTransformer:
-        """This fucntion is responsible for data transformation
+        """This fucntion is responsible for data generating preprocessor object
 
         Raises:
             CustomException: Custom Exception will be captured in log file
@@ -70,7 +70,19 @@ class DataTransformation:
             raise CustomException(e,sys)
         
     
-    def initialte_data_transformation(self,train_path,test_path):
+    def initialte_data_transformation(self,train_path,test_path)->tuple:
+        """This function will transform the training and test data
+
+        Args:
+            train_path (str): _description_
+            test_path (str): _description_
+
+        Raises:
+            CustomException: custom exception will be captured in the log file
+
+        Returns:
+            _type_: _description_
+        """        
         try:
             train_df = pd.read_csv(train_path)
             test_df = pd.read_csv(test_path)
